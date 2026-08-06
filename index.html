@@ -8,6 +8,19 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=Hind:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="src/style.css">
+  <style>
+  .umrah-right{ display:flex; flex-direction:row; align-items:center; justify-content:center; gap:24px; flex-wrap:wrap; }
+  .route-box-mini{ width:180px; max-width:180px; }
+  .route-box-mini svg{ width:100%; height:auto; display:block; }
+  .umrah-media{ max-width:420px; margin:0 auto; display:flex; flex-direction:column; gap:14px; }
+  .umrah-media-photos{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+  .umrah-media-photos img{ width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:10px; border:1px solid rgba(201,191,160,0.35); cursor:pointer; transition:transform .25s ease, opacity .25s ease; }
+  .umrah-media-photos img:hover{ transform:scale(1.04); opacity:0.9; }
+  .umrah-media-video-row{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+  .umrah-media-video{ position:relative; width:100%; max-width:180px; aspect-ratio:9/16; border-radius:12px; overflow:hidden; border:1px solid rgba(201,191,160,0.35); }
+  .umrah-media-video iframe{ position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+  @media (max-width:640px){ .umrah-media{ max-width:100%; padding:0 4px; } }
+</style>
 <style>
   /* --- Umrah photo + video gallery (fills empty space next to the stamp) --- */
   .umrah-media{
