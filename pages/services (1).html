@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — Maahi Trips</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=Hind:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../src/style.css">
+  <!-- EmailJS SDK — used to send the enquiry form to email without a backend (works on GitHub Pages) -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body id="top">
+<header>
+  <div class="nav">
+    <a class="logo" href="../index.html" aria-label="Maahi Trips — Home">
+      <div class="logo-mark"><img src="../assets/maahi-logo.png" alt="Maahi Trips logo"></div>
+      <div class="logo-text">
+        <span class="logo-word">MAAHI TRIPS</span>
+        <span class="logo-tagline">Safar Aapka, Saath Hamaara</span>
+      </div>
+    </a>
+    <nav class="navlinks">
+      <a href="offers.html" id="offersNavLink">Offers</a>
+      <a href="../index.html#umrah">Umrah</a>
+      <a href="services.html">Services</a>
+      <a href="packages.html">Tour Packages</a>
+      <a href="why.html">Why Us</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <a class="call-btn" href="tel:9044100521">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span class="full">90441&nbsp;00521</span>
+    </a>
+    <button class="menu-toggle" aria-label="menu">☰</button>
+  </div>
+</header>
+
+<div class="wrap" style="padding-top:32px;"><a href="../index.html" style="color:#C9BFA0;font-size:14px;text-decoration:none;">← Back to Home</a></div>
+
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="num">01 / SERVICES</div>
+        <h2>Eleven services,<br>one counter.</h2>
+      </div>
+      <p>Every booking and formality Maahi Trips handles — walk in with a destination or a document, walk out sorted.</p>
+    </div>
+
+    <div class="tickets">
+
+      <div class="ticket ticket-bgphoto" style="background-image:url('../images/services/flight.jpg');">
+        <div class="ticket-top">
+          <div><div class="ticket-code">MT-01 · AIR</div><div class="ticket-title">Flight Tickets</div></div>
+          <svg class="ticket-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-1 .1-1.3.5l-.6.7c-.5.5-.3 1.3.3 1.6L9 12l-2 2H4l-1.5 1.5L6 17l1.5 3.5L9 19v-3l2-2 2.7 5.8c.3.6 1.1.8 1.6.3l.7-.6c.4-.3.6-.8.5-1.3Z"/></svg>
+        </div>
+        <div class="ticket-divider"></div>
+        <div class="ticket-bottom">
+          <p>Domestic and international air tickets, fare comparisons and schedule checks done for you.</p>
+          <div class="ticket-stub"><span>KOPAGANJ → ANY</span><span>CONFIRMED</span></div>
+        </div>
+      </div>
+
+      <div class="ticket ticket-bgphoto" style="background-image:url('../images/services/train.jpg');">
+        <div class="ticket-top">
+          <div><div class="ticket-code">MT-02 · RAIL</div><div class="ticket-title">Train Tickets</div></div>
+          <svg class="ticket-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="16" height="14" rx="4"/><path d="M4 11h16M8 17l-2 4M16 17l2 4"/><circle cx="8" cy="14" r="0.5" fill="currentColor"/><circle cx="16" cy="14" r="0.5" fill="currentColor"/></svg>
+        </div>
+        <div class="ticket-divider"></div>
+        <div class="ticket-bottom">
+          <p>Reservations across classes, tatkal booking help, and PNR status support when plans change.</p>
+          <div class="ticket-stub"><span>ALL CLASSES</span><span>CONFIRMED</span></div>
+        </div>
+      </div>
+
+      <div class="ticket ticket-bgphoto" style="background-image:url('../images/services/bus.jpg');">
+        <div class="ticket-top">
+          <div><div class="ticket-code">MT-03 · ROAD</div><div class="ticket-title">Bus Tickets</div></div>
+          <svg class="ticket-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="11" rx="2"/><path d="M3 12h18M7 17v2M17 17v2"/><circle cx="7.5" cy="9.5" r="0.6" fill="currentColor"/><circle cx="16.5" cy="9.5" r="0.6" fill="currentColor"/></svg>
+        </div>
+        <div class="ticket-divider"></div>
+        <div class="ticket-bottom">
+          <p>Sleeper and seater buses to nearby cities and beyond, booked and confirmed same day.</p>
+          <div class="ticket-stub"><span>UP & BEYOND</span><span>CONFIRMED</span></div>
+        </div>
+      </div>
+
+      <div class="ticket ticket-bgphoto" style="background-image:url('../images/services/hotel.jpg');">
+        <div class="ticket-top">
+          <div><div class="ticket-code">MT-04 · STAY</div><div class="ticket-title">Hotel Booking</div></div>
+          <svg class="ticket-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-6h6v6M3 12h18"/></svg>
+        </div>
+        <div class="ticket-divider"></div>
+        <div class="ticket-bottom">
+          <p>Rooms picked to fit your budget and destination — from pilgrim guesthouses to city hotels.</p>
+          <div class="ticket-stub"><span>ANY CITY</span><span>CONFIRMED</span></div>
+        </div>
+      </div>
+
+      <div class="ticket ticket-bgphoto" style="background-image:url('../images/services/tour.jpg');">
+        <div class="ticket-top">
+          <div><div class="ticket-code">MT-05 · TOUR</div><div class="ticket-title">Tour Packages</div></div>
+          <svg class="ticket-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18M7 7l10 10M17 7 7 17"/></svg>
+        </div>
+        <div class="ticket-divider"></div>
+        <div class="ticket-bottom">
+          <p>Planned trips with travel, stay and sightseeing worked out — you just show up and go.</p>
+          <div class="ticket-stub"><span>CUSTOM ROUTES</span><span>PLANNED</span></div>
+        </div>
+      </div>
+
+      <div class="ticket ticket-bgphoto" style="background-image:url('../images/services/umrah.jpg');">
+        <div class="ticket-top">
+          <div><div class="ticket-code">MT-06 · UMRAH</div><div class="ticket-title">Umrah Packages</div></div>
+          <svg class="ticket-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v4M12 21v-4M4.2 6.2l2.8 2.8M17 15l2.8 2.8M3 12h4M17 12h4M4.2 17.8 7 15M17 9l2.8-2.8"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <div class="ticket-divider"></div>
+        <div class="ticket-bottom">
+          <p>Full pilgrimage arrangements — flights, visa support, stay and travel — handled end to end.</p>
+          <div class="ticket-stub"><span>MAKKAH · MADINAH</span><span>PLANNED</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="more-services">
+      <h3>Also handled at the counter</h3>
+      <div class="chip-row">
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>Online Form Filling</div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="3" width="14" height="18" rx="2"/><circle cx="12" cy="9" r="2.5"/><path d="M8 17h8"/></svg>Passport Form Filling</div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg>Visa Assistance</div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 22h20M4 22V10l8-6 8 6v12M9 22v-6h6v6"/></svg>Holiday Packages</div>
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3"/><path d="M2 21c0-4 3-6 7-6s7 2 7 6M17 11l2 2 4-4"/></svg>Jan Seva</div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap footer-inner">
+    <div class="logo-mini"><img src="../assets/maahi-logo.png" alt="Maahi Trips">MAAHI TRIPS</div>
+    <div>CHAMAN ROAD · KOPAGANJ · MAU, UP</div>
+    <div>90441 00521</div>
+    <div class="footer-tagline">"Aapka Bharosa, Hamari Zimmedari"</div>
+  </div>
+</footer>
+<!-- Floating Call Button -->
+<a href="tel:9044100521" class="call-float" aria-label="Call Maahi Trips">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+</a>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/919044100521?text=Hi%20Maahi%20Trips%2C%20I%20want%20to%20enquire%20about%20a%20booking"
+   class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+    <path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4a8.94 8.94 0 0 0-7.75 13.4L3 21l3.7-1.28a8.9 8.9 0 0 0 4.35 1.13h.01A8.94 8.94 0 0 0 20 12.5a8.87 8.87 0 0 0-2.4-6.18zm-5.55 13.7h-.01a7.4 7.4 0 0 1-3.77-1.03l-.27-.16-2.8.97.94-2.72-.18-.28a7.42 7.42 0 0 1 11.6-9.16 7.36 7.36 0 0 1 2.18 5.24 7.43 7.43 0 0 1-7.69 7.14zm4.07-5.56c-.22-.11-1.31-.65-1.52-.72-.2-.08-.35-.11-.5.11-.15.22-.57.72-.7.87-.13.15-.26.17-.48.06-.22-.11-.94-.35-1.79-1.11-.66-.59-1.11-1.32-1.24-1.54-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.21-.69-1.66-.18-.43-.37-.37-.5-.38-.13-.01-.28-.01-.43-.01s-.39.06-.6.28c-.2.22-.79.77-.79 1.87s.81 2.17.92 2.32c.11.15 1.6 2.44 3.87 3.42.54.23.96.37 1.29.48.54.17 1.03.15 1.42.09.43-.06 1.31-.54 1.5-1.06.18-.52.18-.96.13-1.06-.05-.1-.2-.16-.42-.27z"/>
+  </svg>
+</a>
+
+<!-- Live Visitor / Social Proof Popup -->
+<div class="social-proof" id="socialProof" role="status" aria-live="polite">
+  <button class="social-proof-close" id="socialProofClose" aria-label="Dismiss">&times;</button>
+  <div class="social-proof-icon">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+    <span class="pulse-dot"></span>
+  </div>
+  <div>
+    <div class="social-proof-text"><strong id="socialProofCount">15</strong> people viewed <strong id="socialProofPackage">this package</strong> today</div>
+    <div class="social-proof-meta">Live activity · Maahi Trips</div>
+  </div>
+</div>
+
+<!-- Gallery Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <span class="lightbox-close" onclick="closeLightbox(event)">&times;</span>
+  <img id="lightbox-img" src="" alt="Maahi Trips gallery photo">
+</div>
+
+<script src="../src/script.js"></script>
+
+</body>
+</html>
