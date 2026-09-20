@@ -94,11 +94,10 @@
     <div class="badge">रेलवे सीट उपलब्धता रडार (5 - 150 km)</div>
     
     <p>भारतीय रेलवे की कन्फर्म व विकल्प सीटें 100 मीटर से 150 किमी के सभी नजदीकी स्टेशनों पर एक साथ खोजें।</p>
-
-    <!-- पॉपअप ऐप विंडो में खोलेगा जिससे URL नहीं दिखेगा -->
-    <button onclick="openRangPortal()" class="btn">
       सीटें खोजें (Rang App खोलें) →
-    </button>
+     <a href="https://ais-pre-wvufeyqaftz4faf2ihcme6-941942044826.asia-east1.run.app/" class="btn" style="text-decoration: none;">
+      सीटें खोजें (Rang Portal खोलें) →
+    </a>
 
     <div class="footer-help">
       पासकोड सहायता / बुकिंग: <a href="tel:9044100521">90441 00521</a> / <a href="tel:9648133671">96481 33671</a>
@@ -108,21 +107,4 @@
     </div>
   </div>
 
-  <script>
-    function openRangPortal() {
-      const w = 1100;
-      const h = 850;
-      const left = (window.screen.width - w) / 2;
-      const top = (window.screen.height - h) / 2;
-      
-      // यह बिना यूआरएल बार (Clean Standalone Window) के ऐप खोलता है
-      window.open(
-        "https://ais-pre-wvufeyqaftz4faf2ihcme6-941942044826.asia-east1.run.app/",
-        "MaahiTripsRang",
-        `width=${w},height=${h},top=${top},left=${left},scrollbars=yes,status=no,toolbar=no,menubar=no,location=no`
-      );
-    }
-  </script>
-
-</body>
-</html>
+  
