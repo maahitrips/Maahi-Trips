@@ -3,21 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maahi Trips - Rang Train Seat Availability</title>
-  <!-- तुरंत Rang पोर्टल पर रीडायरेक्ट करेगा -->
-  <meta http-equiv="refresh" content="0; url=https://ais-pre-wvufeyqaftz4faf2ihcme6-941942044826.asia-east1.run.app/">
-  <script>
-    window.location.href = "https://ais-pre-wvufeyqaftz4faf2ihcme6-941942044826.asia-east1.run.app/";
-  </script>
+  <title>Maahi Trips - Rang Train Seat Radar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body { background: #0b1120; color: #f59e0b; font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; text-align: center; }
-    a { color: #38bdf8; text-decoration: none; font-weight: bold; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Hind', sans-serif; }
+    body {
+      background: linear-gradient(135deg, #0b1120 0%, #0f172a 100%);
+      color: #f8fafc;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      text-align: center;
+    }
+    .card {
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: 20px;
+      padding: 36px 24px;
+      max-width: 460px;
+      width: 100%;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+    }
+    .icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, #f59e0b, #ea580c);
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 20px rgba(245, 158, 11, 0.3);
+    }
+    h1 { font-size: 24px; font-weight: 700; color: #ffffff; margin-bottom: 6px; }
+    .badge {
+      display: inline-block;
+      background: rgba(245, 158, 11, 0.15);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      padding: 3px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    p { color: #94a3b8; font-size: 14px; line-height: 1.6; margin-bottom: 24px; }
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #f59e0b, #ea580c);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 14px 24px;
+      border-radius: 12px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 8px 20px rgba(234, 88, 12, 0.35);
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(234, 88, 12, 0.45);
+    }
+    .footer-help {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(148, 163, 184, 0.15);
+      font-size: 12px;
+      color: #64748b;
+    }
+    .footer-help a { color: #f59e0b; text-decoration: none; font-weight: 600; }
   </style>
 </head>
 <body>
-  <div>
-    <p>Maahi Trips Rang पोर्टल खुल रहा है...</p>
-    <p style="font-size: 13px; color: #94a3b8;">यदि अपने आप न खुले तो <a href="https://ais-pre-wvufeyqaftz4faf2ihcme6-941942044826.asia-east1.run.app/">यहाँ क्लिक करें</a></p>
+
+  <div class="card">
+    <div class="icon">🚆</div>
+    <h1>Maahi Trips - Rang</h1>
+    <div class="badge">रेलवे सीट उपलब्धता रडार (5 - 150 km)</div>
+    
+    <p>भारतीय रेलवे की कन्फर्म व विकल्प सीटें 100 मीटर से 150 किमी के सभी नजदीकी स्टेशनों पर एक साथ खोजें।</p>
+
+    <a href="https://ais-pre-wvufeyqaftz4faf2ihcme6-941942044826.asia-east1.run.app/" class="btn">
+      सीटें खोजें (Rang Portal खोलें) →
+    </a>
+
+    <div class="footer-help">
+      पासकोड सहायता / बुकिंग: <a href="tel:9044100521">90441 00521</a> / <a href="tel:9648133671">96481 33671</a>
+      <div style="margin-top: 10px;">
+        <a href="index.html" style="color: #94a3b8;">← मुख्य वेबसाइट पर वापस जाएँ</a>
+      </div>
+    </div>
   </div>
+
 </body>
 </html>
