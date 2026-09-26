@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maahi Trips - Rang Train Seat Radar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Hind', sans-serif; }
+    body {
+      background: linear-gradient(135deg, #0b1120 0%, #0f172a 100%);
+      color: #f8fafc;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      text-align: center;
+    }
+    .card {
+      background: rgba(30, 41, 59, 0.75);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      border-radius: 24px;
+      padding: 36px 24px;
+      max-width: 480px;
+      width: 100%;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(12px);
+    }
+    .icon {
+      width: 68px;
+      height: 68px;
+      background: linear-gradient(135deg, #f59e0b, #ea580c);
+      border-radius: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 34px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 25px rgba(245, 158, 11, 0.35);
+    }
+    h1 { font-size: 24px; font-weight: 700; color: #ffffff; margin-bottom: 6px; }
+    .badge {
+      display: inline-block;
+      background: rgba(245, 158, 11, 0.15);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+    p { color: #94a3b8; font-size: 14px; line-height: 1.6; margin-bottom: 26px; }
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #f59e0b, #ea580c);
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 15px 24px;
+      border-radius: 14px;
+      width: 100%;
+      transition: all 0.2s;
+      box-shadow: 0 10px 25px rgba(234, 88, 12, 0.35);
+      text-decoration: none;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(234, 88, 12, 0.45);
+    }
+    .footer-help {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(148, 163, 184, 0.15);
+      font-size: 13px;
+      color: #64748b;
+    }
+    .footer-help a { color: #f59e0b; text-decoration: none; font-weight: 600; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="icon">🚆</div>
+    <h1>Maahi Trips - Rang</h1>
+    <div class="badge">रेलवे सीट उपलब्धता रडार (5 - 150 km)</div>
+    
+    <p>भारतीय रेलवे की कन्फर्म व विकल्प सीटें 100 मीटर से 150 किमी के सभी नजदीकी स्टेशनों पर एक साथ खोजें।</p>
+
+    <!-- अब सामान्य नए टैब में खुलेगा, पूरे टूलबार/एड्रेस बार के साथ -->
+    <a href="https://ais-pre-wvufeyqaftz4faf2ihcme6-941942044826.asia-east1.run.app/" target="_blank" rel="noopener" class="btn">
+      सीटें खोजें (Rang Portal खोलें) →
+    </a>
+
+    <div class="footer-help">
+      पासकोड सहायता / बुकिंग: <a href="tel:9044100521">90441 00521</a> / <a href="tel:9648133671">96481 33671</a>
+      <div style="margin-top: 12px;">
+        <a href="index.html" style="color: #94a3b8;">← मुख्य वेबसाइट पर वापस जाएँ</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
