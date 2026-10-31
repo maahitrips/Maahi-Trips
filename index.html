@@ -3,51 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Umrah Agency in Mau &amp; Kopaganj | Umrah Packages | Maahi Trips</title>
-<meta name="description" content="Maahi Trips, Chaman Road, Kopaganj (Mau): Umrah packages with visa, flights, hotel and ziyarat, plus flight, train and bus tickets and passport help. Call 90441 00521.">
-<link rel="canonical" href="https://maahitrips.in/">
-<link rel="icon" href="assets/maahi-logo.png">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Maahi Trips — Umrah Agency in Mau &amp; Kopaganj">
-<meta property="og:description" content="Umrah packages, flights, trains, buses, hotels and visa help at one counter on Chaman Road, Kopaganj.">
-<meta property="og:url" content="https://maahitrips.in/">
-<meta property="og:image" content="https://maahitrips.in/assets/maahi-logo.png">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "TravelAgency",
-  "name": "Maahi Trips",
-  "url": "https://maahitrips.in/",
-  "logo": "https://maahitrips.in/assets/maahi-logo.png",
-  "image": "https://maahitrips.in/assets/maahi-logo.png",
-  "telephone": "+919044100521",
-  "email": "info@maahitrips.in",
-  "slogan": "Safar Aapka, Saath Hamaara",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Chaman Road",
-    "addressLocality": "Kopaganj",
-    "addressRegion": "Uttar Pradesh",
-    "addressCountry": "IN"
-  },
-  "geo": { "@type": "GeoCoordinates", "latitude": 26.0227528, "longitude": 83.5654454 },
-  "openingHoursSpecification": [{
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-    "opens": "10:00",
-    "closes": "20:00"
-  }],
-  "areaServed": ["Kopaganj", "Mau"],
-  "sameAs": [
-    "https://youtube.com/@maahitrips",
-    "https://instagram.com/maahitrip",
-    "https://facebook.com/maahitrips"
-  ]
-}
-</script>
+<title>Maahi Trips — Umrah, Flights & Visa Services, Kopaganj</title>
+<meta name="description" content="Maahi Trips is a trusted Umrah agency in Kopaganj &amp; Mau offering affordable Umrah packages, flight, train &amp; visa services. Best Umrah agency Kopaganj — book your Umrah package Kopaganj starting ₹74,500.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=Hind:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=Hind:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=Hind:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"></noscript>
 <link rel="stylesheet" href="src/style.css">
 <style>
   /* --- Umrah photo + video gallery (fills empty space next to the stamp) --- */
@@ -122,15 +83,22 @@
     .umrah-right{ flex-direction:column; }
     .route-box-mini{ max-width:100%; min-width:0; }
   }
+
+  /* --- YouTube click-to-load (saves ~1 MB of JS on mobile) --- */
+  .yt-lite{cursor:pointer;background:#000}
+  .yt-lite img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.9}
+  .yt-play{position:absolute;top:50%;left:50%;width:56px;height:56px;margin:-28px 0 0 -28px;border-radius:50%;background:rgba(0,0,0,.65);border:2px solid #E8DCC0}
+  .yt-play::after{content:"";position:absolute;top:50%;left:50%;margin:-9px 0 0 -6px;border-style:solid;border-width:9px 0 9px 15px;border-color:transparent transparent transparent #E8DCC0}
+  .yt-lite:hover .yt-play,.yt-lite:focus .yt-play{background:rgba(0,0,0,.85)}
 </style>
   <!-- EmailJS SDK — used to send the enquiry form to email without a backend (works on GitHub Pages) -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body id="top">
 <header>
   <div class="nav">
     <a class="logo" href="#top" aria-label="Maahi Trips — Home">
-      <div class="logo-mark"><img src="assets/maahi-logo.png" alt="Maahi Trips logo"></div>
+      <div class="logo-mark"><img src="assets/maahi-logo.png" alt="Maahi Trips logo" fetchpriority="high" decoding="async"></div>
       <div class="logo-text">
         <span class="logo-word">MAAHI TRIPS</span>
         <span class="logo-tagline">Safar Aapka, Saath Hamaara</span>
@@ -146,7 +114,7 @@
       <a href="pages/gallery.html">Gallery</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a class="call-btn" href="tel:+919044100521">
+    <a class="call-btn" href="tel:9044100521">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
       <span class="full">90441&nbsp;00521</span>
     </a>
@@ -191,7 +159,7 @@
 </div>
 <section class="quicknav">
   <div class="wrap quicknav-strip">
-    <a href="pages/services.html" class="quicknav-item">
+    <a href="pages/flights.html" class="quicknav-item">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-1 .1-1.3.5l-.6.7c-.5.5-.3 1.3.3 1.6L9 12l-2 2H4l-1.5 1.5L6 17l1.5 3.5L9 19v-3l2-2 2.7 5.8c.3.6 1.1.8 1.6.3l.7-.6c.4-.3.6-.8.5-1.3Z"/></svg>
       <span>Flights</span>
     </a>
@@ -229,11 +197,11 @@
   <div class="wrap hero-grid">
     <div>
       <div class="eyebrow">Chaman Road · Kopaganj · Mau</div>
-      <h1>Travel Agency &amp; <span>Umrah Packages</span><br>in Kopaganj, Mau</h1>
+      <h1>Every route<br>starts <span>here.</span></h1>
       <p class="lede">Flights, trains, buses, hotels, tour packages and Umrah — booked at one counter on Chaman Road, no running between agents.</p>
       <p style="margin-top:10px;font-style:italic;color:#C9BFA0;font-size:15px;">"Safar Aapka, Saath Hamaara" — your journey, our support.</p>
       <div class="hero-cta">
-        <a class="btn-primary" href="tel:+919044100521">
+        <a class="btn-primary" href="tel:9044100521">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           Call to Book
         </a>
@@ -241,23 +209,13 @@
       </div>
     </div>
     <div class="umrah-media-video-row">
-      <div class="umrah-media-video">
-        <iframe
-          src="https://www.youtube.com/embed/WDjo20g_aUo"
-          title="Umrah package video — Maahi Trips Kopaganj" loading="lazy"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+      <div class="umrah-media-video yt-lite" data-yt="WDjo20g_aUo" role="button" tabindex="0" aria-label="Play Maahi Trips Umrah Video 1">
+        <img src="https://i.ytimg.com/vi/WDjo20g_aUo/hqdefault.jpg" alt="Maahi Trips Umrah Video 1" loading="lazy" decoding="async">
+        <span class="yt-play" aria-hidden="true"></span>
       </div>
-      <div class="umrah-media-video">
-        <iframe
-          src="https://www.youtube.com/embed/4XgrJbqDbV0"
-          title="Umrah journey video — Maahi Trips Kopaganj" loading="lazy"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+      <div class="umrah-media-video yt-lite" data-yt="4XgrJbqDbV0" role="button" tabindex="0" aria-label="Play Maahi Trips Umrah Video 2">
+        <img src="https://i.ytimg.com/vi/4XgrJbqDbV0/hqdefault.jpg" alt="Maahi Trips Umrah Video 2" loading="lazy" decoding="async">
+        <span class="yt-play" aria-hidden="true"></span>
       </div>
     </div>
   </div>
@@ -271,7 +229,7 @@
         <p>Maahi Trips is a trusted Umrah agency in Kopaganj &amp; Mau, offering complete Umrah packages Kopaganj — visa paperwork, flights, stay near the Haram and local travel, all put together so preparation stays simple.</p>
         <div class="umrah-note">Two flight routes available — via Lucknow or via Delhi.</div>
         <div class="umrah-note">Flight direct or via — choose the tier that fits.</div>
-        <a class="big-call" href="tel:+919044100521">Discuss your package →</a>
+        <a class="big-call" href="tel:9044100521">Discuss your package →</a>
       </div>
       <div class="umrah-right">
         <div class="route-box-mini">
@@ -331,7 +289,7 @@
           <li>24×7 Support</li>
         </ul>
         <div style="display:flex;gap:8px;">
-          <a class="upkg-book-btn" href="tel:+919044100521" style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;">
+          <a class="upkg-book-btn" href="tel:9044100521" style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             Call
           </a>
@@ -372,7 +330,7 @@
           <li>24×7 Support</li>
         </ul>
         <div style="display:flex;gap:8px;">
-          <a class="upkg-book-btn" href="tel:+919044100521" style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;">
+          <a class="upkg-book-btn" href="tel:9044100521" style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             Call
           </a>
@@ -412,7 +370,7 @@
           <li>24×7 Support</li>
         </ul>
         <div style="display:flex;gap:8px;">
-          <a class="upkg-book-btn" href="tel:+919044100521" style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;">
+          <a class="upkg-book-btn" href="tel:9044100521" style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             Call
           </a>
@@ -498,7 +456,7 @@
         </div>
 
         <div class="action-btn-row">
-          <a class="action-btn call" href="tel:+919044100521">
+          <a class="action-btn call" href="tel:9044100521">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             Call
           </a>
@@ -628,14 +586,14 @@
 </section>
 <footer>
   <div class="wrap footer-inner">
-    <div class="logo-mini"><img src="assets/maahi-logo.png" alt="Maahi Trips">MAAHI TRIPS</div>
+    <div class="logo-mini"><img src="assets/maahi-logo.png" alt="Maahi Trips" loading="lazy" decoding="async">MAAHI TRIPS</div>
     <div>CHAMAN ROAD · KOPAGANJ · MAU, UP</div>
     <div>90441 00521</div>
     <div class="footer-tagline">"Aapka Bharosa, Hamari Zimmedari"</div>
   </div>
 </footer>
 <!-- Floating Call Button -->
-<a href="tel:+919044100521" class="call-float" aria-label="Call Maahi Trips">
+<a href="tel:9044100521" class="call-float" aria-label="Call Maahi Trips">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
 </a>
 
@@ -663,10 +621,24 @@
 <!-- Gallery Lightbox -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
   <span class="lightbox-close" onclick="closeLightbox(event)">&times;</span>
-  <img id="lightbox-img" src="" alt="Maahi Trips gallery photo">
+  <img id="lightbox-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Maahi Trips gallery photo" decoding="async">
 </div>
 
-<script src="src/script.js"></script>
+<script defer src="src/script.js"></script>
 
+<script>
+document.querySelectorAll('.yt-lite').forEach(function(el){
+  function load(){
+    var f=document.createElement('iframe');
+    f.src='https://www.youtube.com/embed/'+el.dataset.yt+'?autoplay=1&rel=0';
+    f.title=el.getAttribute('aria-label')||'Video';
+    f.allow='autoplay; encrypted-media; picture-in-picture';
+    f.allowFullscreen=true;
+    el.innerHTML='';el.appendChild(f);el.removeAttribute('role');el.removeAttribute('tabindex');
+  }
+  el.addEventListener('click',load,{once:true});
+  el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();load();}},{once:true});
+});
+</script>
 </body>
 </html>
