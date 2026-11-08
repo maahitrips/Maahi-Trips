@@ -50,7 +50,7 @@
       <p>Trips, pilgrimages and happy travellers booked through Maahi Trips — a look at journeys already underway.</p>
     </div>
 
-    <div class="gallery-grid">
+    <div class="gallery-grid" id="galGrid">
       <!-- To add a photo: upload it to the assets/ folder in your GitHub repo, then add a line below -->
       <div class="gallery-item" onclick="openLightbox(this)"><img src="../assets/img1.jpg" alt="Maahi Trips travel photo" loading="lazy"></div>
       <div class="gallery-item" onclick="openLightbox(this)"><img src="../assets/img2.jpg" alt="Maahi Trips travel photo" loading="lazy"></div>
@@ -87,4 +87,54 @@
 
 <!-- Floating Call Button -->
 <a href="tel:9044100521" class="call-float" aria-label="Call Maahi Trips">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+</a>
+
+<!-- Lightbox (photo par tap karne par full size) -->
+<div id="mtLb" style="position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:99999;padding:16px;cursor:zoom-out">
+  <button type="button" id="mtLbX" aria-label="Close" style="position:absolute;top:12px;right:16px;background:none;border:0;color:#fff;font-size:40px;line-height:1;cursor:pointer">&times;</button>
+  <img id="mtLbImg" alt="" style="max-width:100%;max-height:92vh;border-radius:8px">
+</div>
+
+<script>
+/* Lightbox */
+(function(){
+  var lb=document.getElementById('mtLb'),im=document.getElementById('mtLbImg');
+  window.openLightbox=function(el){
+    var i=el.querySelector('img'); if(!i)return;
+    im.src=i.currentSrc||i.src; im.alt=i.alt||''; lb.style.display='flex';
+  };
+  function close(){lb.style.display='none';im.removeAttribute('src');}
+  lb.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+
+/* Mobile menu */
+(function(){
+  var b=document.querySelector('.menu-toggle'),n=document.querySelector('.navlinks');
+  if(!b||!n)return;
+  b.addEventListener('click',function(){n.classList.toggle('open');n.classList.toggle('show');n.classList.toggle('active');});
+})();
+
+/* AUTO GALLERY: assets/gallery/ folder me photo upload karo, yahan apne aap dikhegi */
+(function(){
+  var REPO='maahitrips/Maahi-Trips', DIR='assets/gallery';
+  var grid=document.getElementById('galGrid'); if(!grid)return;
+  fetch('https://api.github.com/repos/'+REPO+'/contents/'+DIR)
+    .then(function(r){if(!r.ok)throw 0;return r.json();})
+    .then(function(files){
+      files.filter(function(f){return f.type==='file'&&/\.(jpe?g|png|webp)$/i.test(f.name);})
+        .sort(function(a,b){return a.name.localeCompare(b.name);})
+        .forEach(function(f){
+          var d=document.createElement('div');d.className='gallery-item';
+          d.setAttribute('onclick','openLightbox(this)');
+          var i=document.createElement('img');
+          i.src='../'+DIR+'/'+encodeURIComponent(f.name);
+          i.alt='Maahi Trips travel photo';i.loading='lazy';
+          d.appendChild(i);grid.insertBefore(d,grid.firstChild);
+        });
+    }).catch(function(){});
+})();
+</script>
+</body>
+</html>
