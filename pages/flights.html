@@ -11,25 +11,25 @@
 <link rel="stylesheet" href="../src/style.css">
 <style>
   .fl-wrap{max-width:1100px;margin:0 auto;padding:32px 16px 80px}
-  .fl-back{display:inline-block;margin-bottom:18px;color:#C9BFA0;text-decoration:none;font-size:15px}
-  .fl-back:hover{color:#E8DCC0}
-  .fl-eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#C9BFA0}
-  .fl-title{font-family:'Teko',sans-serif;font-size:clamp(34px,6vw,56px);line-height:1.05;color:#E8DCC0;margin:6px 0 10px}
-  .fl-lede{color:#C9BFA0;max-width:640px;line-height:1.6;margin-bottom:28px}
-  .fl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
-  .fl-card{border:1px solid rgba(201,191,160,.35);border-radius:14px;overflow:hidden;background:rgba(255,255,255,.03);display:flex;flex-direction:column}
-  .fl-img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;cursor:zoom-in;background:#111}
+  .fl-back{display:inline-block;margin-bottom:18px;color:#12304F;text-decoration:none;font-size:16px;font-weight:700}
+  .fl-back:hover{color:#B8741A}
+  .fl-eyebrow{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:#7A4A0A;font-weight:700}
+  .fl-title{font-family:'Teko',sans-serif;font-size:clamp(34px,6vw,56px);line-height:1.05;color:#12304F;margin:6px 0 10px;font-weight:700}
+  .fl-lede{color:#2B2B2B;max-width:640px;line-height:1.6;margin-bottom:28px;font-weight:600}
+  .fl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;align-items:start}
+  .fl-card{border:2px solid #12304F;border-radius:14px;overflow:hidden;background:#fff;display:flex;flex-direction:column;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+  .fl-img{display:block;width:100%;height:auto;cursor:zoom-in;background:#fff}
   .fl-body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:10px}
-  .fl-name{color:#E8DCC0;font-weight:600;font-size:16px}
-  .fl-note{color:#C9BFA0;font-size:13px}
+  .fl-name{color:#12304F;font-weight:800;font-size:18px}
+  .fl-note{color:#2B2B2B;font-size:14px;font-weight:600}
   .fl-btns{display:flex;gap:8px}
-  .fl-btns a{flex:1;text-align:center;padding:10px 8px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none}
-  .fl-wa{background:#25D366;color:#fff}
-  .fl-call{border:1px solid #C9BFA0;color:#E8DCC0}
-  .fl-empty{border:1px dashed rgba(201,191,160,.5);border-radius:14px;padding:40px 20px;text-align:center;color:#C9BFA0;line-height:1.7}
-  .fl-empty a{color:#E8DCC0}
-  .fl-cta{margin-top:36px;text-align:center;color:#C9BFA0}
-  .fl-cta a{color:#E8DCC0;font-weight:600}
+  .fl-btns a{flex:1;text-align:center;padding:11px 8px;border-radius:8px;font-weight:800;font-size:15px;text-decoration:none}
+  .fl-wa{background:#128C4A;color:#fff}
+  .fl-call{background:#12304F;border:2px solid #12304F;color:#fff}
+  .fl-empty{border:2px dashed #12304F;border-radius:14px;padding:40px 20px;text-align:center;color:#12304F;line-height:1.7;font-weight:700}
+  .fl-empty a{color:#B8741A;font-weight:800}
+  .fl-cta{margin-top:36px;text-align:center;color:#12304F;font-weight:700}
+  .fl-cta a{color:#B8741A;font-weight:800}
   .fl-box{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:9999;padding:16px}
   .fl-box.open{display:flex}
   .fl-box img{max-width:100%;max-height:92vh;border-radius:8px}
@@ -94,7 +94,7 @@
   /* AUTO MODE: bas photo ko assets/flight-posters/ folder me upload karo, page par apne aap dikh jayegi.
      Photo ka naam hi poster ka title banega (dubai-special-fare.jpg -> "Dubai Special Fare").
      Order: file naam ke hisaab se Z se A (naya upar). Isliye naam ke aage date lagao, jaise 2026-11-10-dubai.jpg */
-  var REPO='maahitrips/Maahi-Trips', DIR='assets/assets/flight-posters';
+  var REPO='maahitrips/Maahi-Trips', DIR='assets/flight-posters';
   function nice(n){
     return n.replace(/\.[^.]+$/,'').replace(/^\d{4}-\d{2}-\d{2}[-_ ]?/,'').replace(/[-_]+/g,' ').trim()
       .replace(/\b\w/g,function(c){return c.toUpperCase();})||'Flight special fare';
