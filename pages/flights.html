@@ -89,9 +89,26 @@
      2) Neeche list me ek nayi line jodo (har line ke baad comma)
      Newest poster sabse upar rakho.
      ============================================================ */
-  var LOCAL=[
-    {title:'Delhi to Dubai Special Fare', note:'Fare confirm karne ke liye call karein', image_url:'../images/flights/dubai-nov.jpg'}
-  ];
+  var LOCAL=[];
+
+  /* AUTO MODE: bas photo ko assets/flight-posters/ folder me upload karo, page par apne aap dikh jayegi.
+     Photo ka naam hi poster ka title banega (dubai-special-fare.jpg -> "Dubai Special Fare").
+     Order: file naam ke hisaab se Z se A (naya upar). Isliye naam ke aage date lagao, jaise 2026-11-10-dubai.jpg */
+  var REPO='maahitrips/Maahi-Trips', DIR='assets/flight-posters';
+  function nice(n){
+    return n.replace(/\.[^.]+$/,'').replace(/^\d{4}-\d{2}-\d{2}[-_ ]?/,'').replace(/[-_]+/g,' ').trim()
+      .replace(/\b\w/g,function(c){return c.toUpperCase();})||'Flight special fare';
+  }
+  function fromGithub(){
+    return fetch('https://api.github.com/repos/'+REPO+'/contents/'+DIR)
+      .then(function(r){if(!r.ok)throw 0;return r.json();})
+      .then(function(files){
+        return files.filter(function(f){return f.type==='file'&&/\.(jpe?g|png|webp)$/i.test(f.name);})
+          .sort(function(a,b){return b.name.localeCompare(a.name);})
+          .map(function(f){return {title:nice(f.name),image_url:'../'+DIR+'/'+encodeURIComponent(f.name)};});
+      })
+      .catch(function(){return [];});
+  }
 
   function empty(){
     grid.className='';
@@ -162,13 +179,16 @@
   }
 
   /* Supabase config na ho to sirf GitHub wale posters dikhao */
-  if(!cfg.SUPABASE_URL||!cfg.SUPABASE_ANON_KEY){render(LOCAL);return;}
+  function fromSupabase(){
+    if(!cfg.SUPABASE_URL||!cfg.SUPABASE_ANON_KEY)return Promise.resolve([]);
+    return fetch(cfg.SUPABASE_URL+'/rest/v1/posts?category=eq.flight&order=created_at.desc&select=title,note,image_url,video_url',{
+      headers:{apikey:cfg.SUPABASE_ANON_KEY,Authorization:'Bearer '+cfg.SUPABASE_ANON_KEY}
+    }).then(function(r){if(!r.ok)throw 0;return r.json();}).catch(function(){return [];});
+  }
 
-  fetch(cfg.SUPABASE_URL+'/rest/v1/posts?category=eq.flight&order=created_at.desc&select=title,note,image_url,video_url',{
-    headers:{apikey:cfg.SUPABASE_ANON_KEY,Authorization:'Bearer '+cfg.SUPABASE_ANON_KEY}
-  }).then(function(r){if(!r.ok)throw 0;return r.json();})
-    .then(function(rows){render(LOCAL.concat(rows));})
-    .catch(function(){render(LOCAL);});
+  Promise.all([fromGithub(),fromSupabase()]).then(function(res){
+    render(res[0].concat(LOCAL,res[1]));
+  });
 })();
 </script>
 </body>
