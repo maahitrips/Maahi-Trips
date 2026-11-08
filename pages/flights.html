@@ -83,11 +83,20 @@
   var grid=document.getElementById('flGrid');
   var PHONE='919044100521';
 
+  /* ============================================================
+     GITHUB POSTERS - yahan naya poster add karo
+     1) Image ko repo ke images/flights/ folder me upload karo
+     2) Neeche list me ek nayi line jodo (har line ke baad comma)
+     Newest poster sabse upar rakho.
+     ============================================================ */
+  var LOCAL=[
+    {title:'Delhi to Dubai Special Fare', note:'Fare confirm karne ke liye call karein', image_url:'../images/flights/dubai-nov.jpg'}
+  ];
+
   function empty(){
     grid.className='';
     grid.innerHTML='<div class="fl-empty">Special fare posters will appear here soon.<br>Abhi ke best rate ke liye <a href="tel:9044100521">90441 00521</a> par call karein ya WhatsApp karein.</div>';
   }
-  if(!cfg.SUPABASE_URL||!cfg.SUPABASE_ANON_KEY){empty();return;}
 
   function ytId(u){var m=(u||'').match(/(?:youtu\.be\/|v=|\/shorts\/|\/embed\/)([A-Za-z0-9_-]{11})/);return m?m[1]:null;}
   function el(tag,cls,text){var e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e;}
@@ -133,6 +142,7 @@
 
   function render(rows){
     if(!rows.length){empty();return;}
+    grid.innerHTML='';
     rows.forEach(function(p,i){
       var title=p.title||'Flight special fare';
       var card=el('article','fl-card');
@@ -151,9 +161,14 @@
     });
   }
 
+  /* Supabase config na ho to sirf GitHub wale posters dikhao */
+  if(!cfg.SUPABASE_URL||!cfg.SUPABASE_ANON_KEY){render(LOCAL);return;}
+
   fetch(cfg.SUPABASE_URL+'/rest/v1/posts?category=eq.flight&order=created_at.desc&select=title,note,image_url,video_url',{
     headers:{apikey:cfg.SUPABASE_ANON_KEY,Authorization:'Bearer '+cfg.SUPABASE_ANON_KEY}
-  }).then(function(r){if(!r.ok)throw 0;return r.json();}).then(render).catch(empty);
+  }).then(function(r){if(!r.ok)throw 0;return r.json();})
+    .then(function(rows){render(LOCAL.concat(rows));})
+    .catch(function(){render(LOCAL);});
 })();
 </script>
 </body>
