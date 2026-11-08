@@ -10,6 +10,23 @@
 <link rel="stylesheet" href="../src/style.css">
   <!-- EmailJS SDK — used to send the enquiry form to email without a backend (works on GitHub Pages) -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<style>
+  /* Layout fix: offers poori chaudai me dikhein (chhote scroll box me nahi) */
+  .offer-page{position:static!important;inset:auto!important;display:block!important;background:none!important;height:auto!important;max-height:none!important;overflow:visible!important;opacity:1!important;visibility:visible!important;transform:none!important;padding:0 16px 60px!important}
+  .offer-modal{position:static!important;transform:none!important;width:100%!important;max-width:1100px!important;max-height:none!important;height:auto!important;overflow:visible!important;margin:0 auto!important;box-shadow:none!important;background:transparent!important;padding:0!important}
+  .offer-modal .section-head h2{font-size:clamp(26px,5vw,38px)!important}
+  /* Poster cards */
+  .op-title{font-family:'Teko',sans-serif;font-size:26px;font-weight:700;color:#12304F;margin:26px 0 12px}
+  .op-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;align-items:start}
+  .op-card{border:2px solid #12304F;border-radius:14px;overflow:hidden;background:#fff;display:flex;flex-direction:column;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+  .op-img{display:block;width:100%;height:auto;cursor:zoom-in;background:#fff}
+  .op-body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:10px}
+  .op-name{color:#12304F;font-weight:800;font-size:18px}
+  .op-btns{display:flex;gap:8px}
+  .op-btns a{flex:1;text-align:center;padding:11px 8px;border-radius:8px;font-weight:800;font-size:15px;text-decoration:none;color:#fff}
+  .op-wa{background:#128C4A}
+  .op-call{background:#12304F}
+</style>
 </head>
 <body id="top">
 <header>
@@ -38,7 +55,7 @@
   </div>
 </header>
 
-<div class="wrap" style="padding-top:32px;"><a href="../index.html" style="color:#C9BFA0;font-size:14px;text-decoration:none;">← Back to Home</a></div>
+<div class="wrap" style="padding-top:32px;"><a href="../index.html" style="color:#12304F;font-size:16px;font-weight:700;text-decoration:none;">← Back to Home</a></div>
 
 <div class="offer-page" >
   <div class="offer-modal">
@@ -67,6 +84,12 @@
         </div>
         <a class="offer-book-btn" href="tel:9044100521">Book Now</a>
       </div>
+    </div>
+
+    <!-- Poster offers: assets/offer-posters/ folder se apne aap aate hain -->
+    <div id="opWrap" style="display:none">
+      <div class="op-title">Special Offer Posters</div>
+      <div class="op-grid" id="opGrid"></div>
     </div>
   </div>
 </div>
@@ -111,6 +134,52 @@
 </div>
 
 <script src="../src/script.js"></script>
+
+<!-- Poster lightbox -->
+<div id="mtLb" style="position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:99999;padding:16px;cursor:zoom-out">
+  <button type="button" aria-label="Close" style="position:absolute;top:12px;right:16px;background:none;border:0;color:#fff;font-size:40px;line-height:1;cursor:pointer">&times;</button>
+  <img id="mtLbImg" alt="" style="max-width:100%;max-height:92vh;border-radius:8px">
+</div>
+
+<script>
+/* AUTO OFFER POSTERS: poster ko assets/offer-posters/ folder me upload karo, yahan apne aap dikhega.
+   Naam se title banta hai (umrah-mega-offer.jpg -> "Umrah Mega Offer").
+   Naam ke aage date lagao (2026-11-10-...) to naya poster upar aayega. */
+(function(){
+  var REPO='maahitrips/Maahi-Trips', DIR='assets/offer-posters', PHONE='919044100521';
+  var wrap=document.getElementById('opWrap'),grid=document.getElementById('opGrid');
+  if(!grid)return;
+  var lb=document.getElementById('mtLb'),im=document.getElementById('mtLbImg');
+  function close(){lb.style.display='none';im.removeAttribute('src');}
+  lb.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  function nice(n){return n.replace(/\.[^.]+$/,'').replace(/^\d{4}-\d{2}-\d{2}[-_ ]?/,'').replace(/[-_]+/g,' ').trim().replace(/\b\w/g,function(c){return c.toUpperCase();})||'Special Offer';}
+  function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e;}
+  fetch('https://api.github.com/repos/'+REPO+'/contents/'+DIR)
+    .then(function(r){if(!r.ok)throw 0;return r.json();})
+    .then(function(files){
+      var rows=files.filter(function(f){return f.type==='file'&&/\.(jpe?g|png|webp)$/i.test(f.name);})
+        .sort(function(a,b){return b.name.localeCompare(a.name);});
+      if(!rows.length)return;
+      rows.forEach(function(f,i){
+        var title=nice(f.name),src='../'+DIR+'/'+encodeURIComponent(f.name);
+        var card=el('article','op-card');
+        var img=el('img','op-img');img.src=src;img.alt=title;img.decoding='async';if(i>=2)img.loading='lazy';
+        img.addEventListener('click',function(){im.src=src;im.alt=title;lb.style.display='flex';});
+        var body=el('div','op-body');
+        body.appendChild(el('div','op-name',title));
+        var btns=el('div','op-btns');
+        var wa=el('a','op-wa','WhatsApp');
+        wa.href='https://wa.me/'+PHONE+'?text='+encodeURIComponent('Hi Maahi Trips, I saw this offer: '+title+'. Please share the details.');
+        wa.target='_blank';wa.rel='noopener';
+        var call=el('a','op-call','Call');call.href='tel:9044100521';
+        btns.appendChild(wa);btns.appendChild(call);body.appendChild(btns);
+        card.appendChild(img);card.appendChild(body);grid.appendChild(card);
+      });
+      wrap.style.display='block';
+    }).catch(function(){});
+})();
+</script>
 
 </body>
 </html>
